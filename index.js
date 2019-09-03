@@ -1,7 +1,7 @@
 'use strict';
 
 require('dotenv').config();
-const app = require('./src/app');
+const app = require('./src/app').start;
 const mongoose = require('mongoose');
 const options = {
   useNewUrlParser:true,
@@ -10,4 +10,4 @@ const options = {
 };
 mongoose.connect( process.env.MONGODB_URI, options );
 
-app.start(  process.env.PORT || 3000 );
+app(process.env.PORT || 3000 );

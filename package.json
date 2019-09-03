@@ -7,7 +7,7 @@
     "start": "node index.js",
     "watch": "nodemon index.js",
     "startDB": "mkdir -p ./.db && mongod --dbpath ./.db",
-    "lint": "eslint **/*.js"
+    "lint": "eslint \"**/*.js\""
   },
   "repository": {
     "type": "git",

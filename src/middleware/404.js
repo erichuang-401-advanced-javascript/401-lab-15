@@ -1,6 +1,6 @@
 'use strict';
 
-function error404 ( request, response, next ) {
+function error404 ( request, response ) {
   response.status(404).json('four, oh four.');
 }
 

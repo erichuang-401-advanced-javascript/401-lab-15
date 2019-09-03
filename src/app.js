@@ -6,6 +6,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 
 const contentRoute = require('./routes/contentRoute');
+const authRoutes = require('./routes/authRoutes');
 const error404 = require('./middleware/404');
 const errorHandler = require('./middleware/500');
 
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 //routes
+app.use( authRoutes );
 app.use( contentRoute );
 
 //all errors down here

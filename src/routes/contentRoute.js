@@ -1,14 +1,17 @@
 'use strict';
 
 const express = require('express');
+// eslint-disable-next-line new-cap
 const contentRoute = express.Router();
-const modelLoader = require('../middleware/helpers').modelLoader;
+const helper = require('../middleware/helpers');
+const modelLoader = helper.modelLoader;
+const authenticate = helper.authenticate;
 
 contentRoute.param('model', modelLoader);
-contentRoute.get('/:model', get);
-contentRoute.post('/:model', create);
-contentRoute.put('/:model', update);
-contentRoute.delete('/:model', remove);
+contentRoute.get('/content/:model', authenticate, get);
+contentRoute.post('/content/:model', authenticate, create);
+contentRoute.put('/content/:model', authenticate, update);
+contentRoute.delete('/content/:model', authenticate, remove);
 
 function get ( request, response, next ) {
   if ( request.query.id ) {

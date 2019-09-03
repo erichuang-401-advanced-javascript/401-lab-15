@@ -1,12 +1,13 @@
 'use strict';
 
-class modelsCRUD {
+class ModelCRUD {
 
   constructor( schema ) {
     this.schema = schema;
   }
 
   create( record ) {
+    // eslint-disable-next-line new-cap
     let newRecord = new this.schema( record );
     return newRecord.save();
   }
@@ -39,4 +40,4 @@ class modelsCRUD {
 
 }
 
-module.exports = modelsCRUD;
+module.exports = ModelCRUD;

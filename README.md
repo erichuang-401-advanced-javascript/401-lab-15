@@ -6,20 +6,20 @@
 
 ### Links and Resources
 * [submission PR](https://github.com/erichuang-401-advanced-javascript/401-lab-15/pull/3)
-* [travis]()
-* [front-end]()
+* [travis](https://www.travis-ci.com/erichuang-401-advanced-javascript/401-lab-15)
+* [front-end](https://erichuang-401-lab15.herokuapp.com/)
 
 #### Documentation
-* [jsdoc]()
+* [jsdoc](https://erichuang-401-lab15.herokuapp.com/docs)
+* [swagger](https://erichuang-401-lab15.herokuapp.com/api-docs)
 
 ### Modules
-#### 
-
-##### Exported Values and Methods
-
-###### `handleGetAll() -> object`
-Gets all existing records
-
+#### 404
+#### 500
+#### helpers
+#### userModel
+#### authRoutes
+#### contentRoutes
 
 ### Setup
 #### `.env` requirements
@@ -28,10 +28,15 @@ Gets all existing records
 * `SECRET` - Secret for authentication
 
 #### Running the app
-* `npm start`
+* `npm run start/watch`
+* `npm run startDB`
 * Endpoint: `/signup`
-  * Returns a jwt token generated from the log in information.
-
+* Endpoint: `/signin`
+  * Returns a token
+* Endpoint: `/content/products`
+  * GET/PUT/POST/DELETE - for GET, PUT, DELETE enter product ID as query
+* Endpoint: `/content/categories`
+  * GET/PUT/POST/DELETE - for GET, PUT, DELETE enter product ID as query
 
 #### Tests
 * Lint test: `npm run lint`

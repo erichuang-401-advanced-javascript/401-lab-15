@@ -7,11 +7,23 @@ const User = require('../models/auth/userModel');
 const helper = require('../middleware/helpers');
 const authenticate = helper.authenticate;
 
+/**
+ * Sign up route
+ * @route POST /signup
+ * @returns {object} 200 - An object of user info
+ * @returns {Error}  default - Unexpected error
+ */
 authRoutes.post('/signup', signup);
-authRoutes.post('/signin', authenticate, signin); //basic auth only, reject tokens
+
+/**
+ * Sign in route
+ * @route POST /signin
+ * @returns {object} 200 - Token
+ * @returns {Error}  default - Unexpected error
+ */
+authRoutes.post('/signin', authenticate, signin);
 
 function signup ( request, response, next ) {
-//take request.body, make new User, .save, return user
   let newUser = new User ( request.body );
   newUser.save()
     .then( user => {

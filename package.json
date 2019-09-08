@@ -7,6 +7,7 @@
     "start": "node index.js",
     "watch": "nodemon index.js",
     "startDB": "mkdir -p ./.db && mongod --dbpath ./.db",
+    "jsdoc": "jsdoc -c ./docs/config/jsdoc.config.json",
     "lint": "eslint \"**/*.js\""
   },
   "repository": {
@@ -26,7 +27,9 @@
     "dotenv": "^8.1.0",
     "eslint": "^6.3.0",
     "express": "^4.17.1",
+    "express-swagger-generator": "^1.1.15",
     "jest": "^24.9.0",
+    "jsdoc": "^3.6.3",
     "jsonwebtoken": "^8.5.1",
     "mongodb-memory-server": "^5.2.0",
     "mongoose": "^5.6.11",
